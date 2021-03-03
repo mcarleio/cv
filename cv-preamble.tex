@@ -1,0 +1,97 @@
+%----------------------------------------------------------------------------------------
+%	BASE PREAMBLE WITH THEME, COLORS SIZES, COMMANDS, ...
+%----------------------------------------------------------------------------------------
+
+\moderncvstyle{casual} % CV theme
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+% Define left column to be only 2cm small
+\setlength{\hintscolumnwidth}{2cm}
+
+% Define properties for vertical line, so when used, it is
+% * moved from side in between items of \cvdoubleitem
+% * is thin
+% * is the same color as the section titles
+\setlength{\changebarsep}{-235pt} % TODO: Remove magic number
+\setlength{\changebarwidth}{0.5pt}
+\cbcolor{color0}
+
+% Exchange listitemsymbol 'o' with chevron '>'
+\renewcommand{\listitemsymbol}{{\tiny\textcolor{color0}{\iconChevronRight}}}
+% Exchange icons in footer with fontawesome5 versions
+\renewcommand{\mobilephonesymbol}{\raisebox{-1pt}{\small\faIcon{mobile-alt}}\,\,}
+\renewcommand{\emailsymbol}{{\small\faIcon[regular]{envelope}}~}
+\renewcommand{\homepagesymbol}{{\footnotesize\faIcon{globe-europe}}~}
+
+% Used from \homepage, enables https protocol
+\renewcommand*{\httplink}[2][]{%
+  \ifthenelse{\equal{#1}{}}%
+    {\href{#2}{#2}}%
+    {\href{#2}{#1}}}
+
+% redefines \link to be smaller and in a \texttt box
+\let\originallink\link
+\renewcommand{\link}[1]{\footnotesize \texttt{\originallink{#1}}}
+
+% Defines a space to be held between cvitem groups
+\newcommand{\cvspace}{\vspace*{0.4em}}
+
+% Defines custom fontawesome5 icons with 1.5em width 
+\newcommand{\iconCertificate}{\makebox[1.5em][c]{\small\faIcon{medal}}}
+\newcommand{\iconTestimonial}{\makebox[1.5em][c]{\faIcon[regular]{file-alt}}} % alternatives: thumbs-up, star, medal
+\newcommand{\iconBuilding}{\makebox[1.5em][c]{\small\faIcon{building}}}
+\newcommand{\iconGraduation}{\makebox[1.5em][c]{\small\faIcon{graduation-cap}}}
+\newcommand{\iconLink}{\makebox[1.5em][c]{\scriptsize\faIcon{link}}}
+
+\newcommand{\iconMapMarker}{\makebox[1.5em][c]{\faIcon{map-marker-alt}}}
+\newcommand{\iconChevronRight}{\makebox[1.5em][c]{\faIcon{chevron-right}}}
+
+% Defines comman \cve, which shows a location on the right and automatically breaks the line for location
+% (depending on its length and if the date fits in one line)
+\newlength{\cvedatelength}
+\newlength{\cvelocationlength}
+\newcommand{\cve}[4]{
+  \settowidth{\cvedatelength}{#1}
+  \settowidth{\cvelocationlength}{\raggedleft\small\itshape\iconMapMarker~~~#4} % TODO: Remove magic spaces
+  
+  \cvitemwithcomment
+      {#1}
+      {\parbox[t]
+          {\maincolumnwidth-\separatorcolumnwidth-\cvelocationlength}
+          {\textbf{#2}\ifdim \cvedatelength>1.038\hintscolumnwidth\\\else,~\fi\mbox{\emph{#3}}} % TODO: Remove magic number
+      }
+      {\iconMapMarker #4}
+}
+
+
+% Defines a itemize command similar to \cvlistdoubleitem, but with first item in first column (hints)
+% and up to three items in one line
+\newlength{\cvitemizecolumnwidth}
+\newcommand{\cvitemize}[4][.25em]{%
+  \setlength{\cvitemizecolumnwidth}{\maincolumnwidth-\listitemsymbolwidth-\listitemsymbolwidth-\listitemsymbolwidth}
+  \setlength{\cvitemizecolumnwidth}{0.33\cvitemizecolumnwidth}%
+  \cvitem[#1]{}{
+    \ifthenelse{\equal{#2}{}}%
+    {}%
+    {\listitemsymbol\begin{minipage}[t]{\cvitemizecolumnwidth}#2\end{minipage}}%
+    \ifthenelse{\equal{#3}{}}%
+    {}%
+    {\listitemsymbol\begin{minipage}[t]{\cvitemizecolumnwidth}#3\end{minipage}}%
+    \ifthenelse{\equal{#4}{}}%
+    {}%
+    {\listitemsymbol\begin{minipage}[t]{\cvitemizecolumnwidth}#4\end{minipage}}
+  }
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Marcel}
+\familyname{Carlé}
+
+\homepage{https://mcarle.io}
+\photo[120pt][0pt]{carle} % [picture height][frame size]
+
+
+%----------------------------------------------------------------------------------------}

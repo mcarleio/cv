@@ -1,0 +1,43 @@
+name: Build PDFs and deploy to website repo
+on: push
+jobs:
+  build-and-deploy-to-website:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: |
+          carle_en.tex
+          carle_de.tex
+
+    - name: Generate English Thumbnail 
+      uses: jruipinto/ImageMagick-action@v1
+      with:
+        command: convert -density 50 -background white -alpha remove -quality 70 build/carle_en.pdf[0] build/thumbnail_en.jpg
+
+    - name: Generate German Thumbnail 
+      uses: jruipinto/ImageMagick-action@v1
+      with:
+        command: convert -density 50 -background white -alpha remove -quality 70 build/carle_de.pdf[0] build/thumbnail_de.jpg
+
+    - name: Prepare deployment
+      run: |
+        mkdir -p deploy
+        cp build/carle_*.pdf deploy
+        cp build/thumbnail_*.jpg deploy
+
+    - name: Deploy
+      uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
+      with:
+        source_file: 'deploy/*'
+        destination_repo: 'mcarleio/website'
+        destination_folder: 'static/cv'
+        destination_branch: master
+        user_email: 'hi+github@mcarle.io'
+        user_name: $GITHUB_ACTOR
