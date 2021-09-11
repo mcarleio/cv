@@ -5,12 +5,20 @@
 %----------------------------------------------------------------------------------------
 \section{Work Experience}
 
-\cve{Jan 2019 -- Present}{Software Developer}{Panasonic Europe Ltd.}{Hamburg, Germany}
+\cve{Aug 2021 -- Present}{Software Developer}{INFORM GmbH - Optimization Software}{Aachen, Germany}
 \cvitem{}{
-    I am working on a dockerized, Kotlin-based, Spring Boot web application with an Angular frontend,
-    controlling approval processes via Camunda BPMN with dynamic rules based on DMNs.
-    Recently, we migrated the application into the AWS cloud and used Terraform to define its infrastructure as code.
+    I modernize the existing distributed software landscape using hexagonal architectures with
+    Spring Boot and optimize the existing process flows using Camunda.
 }
+\cvspace
+
+\cve{Jan 2019 -- Aug 2021}{Software Developer}{Panasonic Europe Ltd.}{Hamburg, Germany}
+\cvitem{}{
+    I worked on a dockerized, Kotlin-based, Spring Boot web application with an Angular frontend,
+    controlling approval processes via Camunda BPMN with dynamic rules based on DMNs. We migrated
+    the application into the AWS cloud and used Terraform to define its infrastructure as code.
+}
+\cvitem{\iconTestimonial}{\link{https://mcarle.io/testimonials/panasonic.pdf} (German)}
 \cvspace
 
 \cve{Apr 2017 -- Dec 2018}{Project Manager}{Enghouse Networks (Germany) GmbH \footnotesize (formerly XConnect GmbH)}{Düren, Germany}
@@ -28,25 +36,23 @@
     In collaboration with my colleagues, I planned, documented, and implemented new applications, as well as maintained and extended existing ones.
     Furthermore, I also acted as 2nd level support for our customers via mail and phone.
 }
-% TODO: mcarle.io or github.com/mcarleio/cv (with tag?) ? 
 \cvitem{\iconTestimonial}{\link{https://mcarle.io/testimonials/sms-to-xconnect.pdf} (interim, German)}
 \cvspace
+\newpage
 
 \subsection{Start-up}
 \cve{Mar 2014 -- Jun 2016}{Co-Founder and CTO}{Bontoo Mobile Development UG (with limited liability)}{Würselen, Germany}
 \cvitem{}{
     The start-up focused on developing mobile apps in the B2B market. My area of responsibility was IT project
     management and the development of backend systems and REST interfaces that were accessed by the mobile apps.
-    With potential customers, I exchanged ideas on how a mobile app could support their company's goals.
+    I also advised potential customers on how a mobile application could facilitate daily work in their business area.
 }
-\cvspace
-\newpage
 
 \subsection{Apprenticeship}
 \cve{Jul 2009 -- Jan 2012}{Mathematical-Technical Software Developer (MATSE)}{sms eSolutions GmbH}{Düren, Germany}
 \cvitem{}{
-    I started my career with a dual degree program, i.e., apprenticeship as a Mathematical-Technical Software Developer
-    (abbreviated as MATSE in German) while parallelly studying for a Bachelor’s degree in Scientific Programming.
+    I started my career with a dual study program, i.e. with an apprenticeship as Mathematical-Technical Software Developer
+    (abbreviated as MATSE in German) and a parallel bachelor study in Scientific Programming.
 }
 
 %----------------------------------------------------------------------------------------
@@ -84,31 +90,6 @@
 
 
 %----------------------------------------------------------------------------------------
-%	SKILLS SECTION
-%----------------------------------------------------------------------------------------
-
-
-\section{Technical Skills}
-
-\cvdoubleitem{}{\strut\subsectionstyle{Languages}}{\cbstart}{\strut\subsectionstyle{Platforms}}
-\cvdoubleitem{> 10 years}{Java, JavaScript, HTML, Bash, SQL}{> 10 years}{Linux, Windows}
-\cvdoubleitem{> 2 years}{Kotlin, TypeScript}{> 2 years}{AWS, Android}
-\cvspace
-
-\cvdoubleitem{}{\strut\subsectionstyle{Backend Frameworks}}{}{\strut\subsectionstyle{Databases}}
-\cvdoubleitem{> 10 years}{Hibernate}{> 9 years}{Oracle}
-\cvdoubleitem{> 6 years}{Java EE}{> 5 years}{MySQL, MariaDB, H2}
-\cvdoubleitem{> 2 years}{Spring Boot, Camunda}{> 3 years}{PostgreSQL, Derby}
-\cvdoubleitem{> 1 year}{Quarkus, OSGi, NodeJS}{> 1 year}{NoSQL (Neo4j, MongoDB, Redis)}
-\cvspace
-
-\cvdoubleitem{}{\strut\subsectionstyle{Tools}}{}{\strut\subsectionstyle{Frontend Frameworks}}
-\cvdoubleitem{> 10 years}{JIRA, Confluence, Maven, Jenkins}{> 6 years}{JSF}
-\cvdoubleitem{> 5 years}{Git, GitLab, Mercurial}{> 3 years}{Angular, Vaadin}
-\cvdoubleitem{> 3 years}{Docker}{}{}
-\cvdoubleitem{> 1 year}{Terraform}{\cbend}{}
-
-%----------------------------------------------------------------------------------------
 %	SOFT SKILLS SECTION
 %----------------------------------------------------------------------------------------
 
@@ -129,6 +110,30 @@
 
 
 %----------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Technical Skills}
+
+\cvdoubleitem{}{\strut\subsectionstyle{Languages}}{}{\strut\subsectionstyle{Platforms}}
+\cvdoubleitem{> 10 years}{Java, JavaScript, HTML, Bash, SQL}{> 10 years\cbstart}{Linux, Windows}
+\cvdoubleitem{> 2 years}{Kotlin, TypeScript}{> 2 years\cbend}{AWS, Android}
+\cvspace
+
+\cvdoubleitem{}{\strut\subsectionstyle{Backend Frameworks}}{}{\strut\subsectionstyle{Databases}}
+\cvdoubleitem{> 10 years}{Hibernate}{> 9 years\cbstart}{Oracle}
+\cvdoubleitem{> 6 years}{Java EE}{> 5 years}{MySQL, MariaDB, H2}
+\cvdoubleitem{> 2 years}{Spring Boot, Camunda}{> 3 years}{PostgreSQL, Derby}
+\cvdoubleitem{> 1 year}{Quarkus, OSGi, NodeJS}{> 1 year\cbend}{NoSQL (Neo4j, MongoDB, Redis)}
+\cvspace
+
+\cvdoubleitem{}{\strut\subsectionstyle{Tools}}{}{\strut\subsectionstyle{Frontend Frameworks}}
+\cvdoubleitem{> 10 years}{JIRA, Confluence, Maven, Jenkins}{> 6 years\cbstart}{JSF}
+\cvdoubleitem{> 5 years}{Git, GitLab, Mercurial}{> 3 years}{Angular, Vaadin}
+\cvdoubleitem{> 3 years}{Docker}{}{}
+\cvdoubleitem{> 1 year}{Terraform}{\cbend}{}
+
+%----------------------------------------------------------------------------------------
 %	OWN PROJECTS SECTION
 %----------------------------------------------------------------------------------------
 
@@ -142,11 +147,10 @@
 \cvitem{\iconLink}{\link{https://mcarle.io/project/getfav}}
 \cvspace
 
-\cvitem{\textbf{GitHub}}{
+\cvitem{\textbf{More on GitHub}}{
     On my GitHub account, I publish smaller projects like \emph{Strix}, a lightweight and simple JPA transaction library,
-    or \emph{Sciurus}, a collection of useful aspects to, e.g., monitor method executions. 
-    %For these projects, high test coverage and documentation is important to me.
-    In doing so, high test coverage and documentation is important to me.
+    or \emph{Sciurus}, a collection of useful aspects to, e.g., monitor method executions.
+    There you will also find e.g. the source code for my website and this CV.
 }
 \cvitem{\iconLink}{\link{https://github.com/mcarleio}}
 
