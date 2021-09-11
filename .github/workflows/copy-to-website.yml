@@ -40,4 +40,4 @@ jobs:
         destination_folder: 'static/cv'
         destination_branch: master
         user_email: 'hi+github@mcarle.io'
-        user_name: $GITHUB_ACTOR
+        user_name: ${{ github.actor }}
