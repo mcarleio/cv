@@ -15,12 +15,12 @@ jobs:
           carle_de.tex
 
     - name: Generate English Thumbnail 
-      uses: jruipinto/ImageMagick-action@v1
+      uses: jruipinto/ImageMagick-action@9345ee5
       with:
         command: convert -density 50 -background white -alpha remove -quality 70 build/carle_en.pdf[0] build/thumbnail_en.jpg
 
     - name: Generate German Thumbnail 
-      uses: jruipinto/ImageMagick-action@v1
+      uses: jruipinto/ImageMagick-action@9345ee5
       with:
         command: convert -density 50 -background white -alpha remove -quality 70 build/carle_de.pdf[0] build/thumbnail_de.jpg
 
